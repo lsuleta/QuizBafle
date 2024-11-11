@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bafle</title>
+    <link rel="stylesheet" href="styleIndex.css">
+</head>
+<body>    
+    <img src="adicionales/LogoBafle.png" alt="logo de Bafle" class="background-image">
+    <img src="adicionales/QuizBafle.png" alt="imagen de carga" id="loading-image" class="background-image">
+    <div class="button-container">
+        <a href="#" onclick="showLoading()"><button class="button">Quiz Bafle</button></a>
+    </div> 
+    <script>
+        function showLoading() {
+                document.getElementById("loading-image").style.display = "block";
+                setTimeout(function () {
+                    window.location.href = "quiz.html";
+                }, 1000); 
+            }
+    </script>   
+</body>
+</html>
