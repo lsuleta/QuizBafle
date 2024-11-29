@@ -99,7 +99,7 @@ const imagen = document.getElementById("imagen");
 
 let preguntaActualIndex = 0;
 let marcador = 0;
-
+// esta funcion setea marcador a 0 y reinicia las clases de los elementos
 function empezarQuiz() {
     botonSiguiente.style.display = "none";
     reproductor.style.display = "block";
@@ -110,7 +110,7 @@ function empezarQuiz() {
     botonSiguiente.innerHTML = "Siguiente";
     mostrarAudio();
 }
-
+// inyecta la informacion del arreglo de objetos por indice muestra 1 pregunta a la vez
 function mostrarAudio() {
     restaurarEstado();
     let preguntaActual = preguntas[preguntaActualIndex];
@@ -127,14 +127,14 @@ function mostrarAudio() {
         boton.addEventListener("click", elegirRespuesta);
     })
 }
-
+// resetea las clases que le dan estilos a los botones 
 function restaurarEstado() {
     botonSiguiente.style.display = "none";
     while (respuestaBotones.firstChild) {
         respuestaBotones.removeChild(respuestaBotones.firstChild);
     }
 }
-
+// otorga una clase de correcta o incorrecta a la respuesta segun lo que se elige y hace el conteo del marcador
 function elegirRespuesta(e) {
     const botonElegido = e.target;
     const esCorrecto = botonElegido.dataset.correct === "true";
@@ -152,7 +152,7 @@ function elegirRespuesta(e) {
     })
     botonSiguiente.style.display = "block";
 }
-
+// muestra la puntuacion obtenida
 function mostrarResultado() {
     restaurarEstado();
     resultado.style.display = "block";
@@ -162,7 +162,7 @@ function mostrarResultado() {
     reproductor.style.display = "none";
     imagen.style.display = "none";
 }
-
+// verifica que exista una siguiente pregunta sino muestra la puntuacion y luego permite volver a jugar
 function manejarSiguienteBoton() {
     preguntaActualIndex++;
     if (preguntaActualIndex < preguntas.length) {

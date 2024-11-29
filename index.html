@@ -12,8 +12,8 @@
     <div class="button-container">
         <a href="#" onclick="showLoading()"><button class="button">Quiz Bafle</button></a>
     </div> 
-    <script>
-        function showLoading() {
+    <script> //esta funcion retrasa la carga del quiz 1 segundo para poder cargar correctamente los elementos
+        function showLoading() {                                    
                 document.getElementById("loading-image").style.display = "block";
                 setTimeout(function () {
                     window.location.href = "quiz.html";
